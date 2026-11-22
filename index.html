@@ -1654,12 +1654,14 @@ var FIX={"restaurants_public": [{"id": "facdf952-24cb-432f-99fa-3e8c1ea62196", "
 try{var ls=localStorage;
  if(!ls.getItem('shahin_ux_demo_seeded')){
   ls.setItem('shahin-customer-auth',JSON.stringify(SESSION));ls.setItem('shahen_user',JSON.stringify(USER));
-  ls.setItem('shahen_pledge','1');ls.setItem('shahen_reset_v2','true');ls.setItem('shahen_display_size','full');
+  ls.setItem('shahen_pledge','1');ls.setItem('shahen_reset_v2','true');ls.setItem('shahen_display_size','mobile');
   ls.setItem('sh_upd_notice_v1.2.7_test-uid','1');
   ls.setItem('orders',JSON.stringify([{id:'4807',status:'completed',restaurant_name:'الشاوي',res_type:'sweets',total:24000,delivery_price:5000,created_at:new Date(Date.now()-86400000*2).toISOString(),customer_rating:5}]));
   ls.setItem('shahin_ux_demo_seeded','1');}
  ls.removeItem('shahen_active_order_id');}catch(e){}
 window.__UX_DEMO=true;
+try{localStorage.setItem('shahen_display_size','mobile')}catch(e){}
+(function(){var st=document.createElement('style');st.textContent='@media (min-width:521px){html[data-ux]{background:#07010F!important}html[data-ux] body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#07010F!important}html[data-ux] #main-app-shell{width:390px!important;height:min(844px,100vh)!important;max-height:100vh!important;border-radius:38px!important;flex:none;transform:translateZ(0);box-shadow:0 24px 70px rgba(0,0,0,.7)!important}}';(document.head||document.documentElement).appendChild(st);})();
 function svgLogo(name){var c=['#6B2FC0','#B8860B','#2C7A5B','#B4452B','#3A5FB0','#8A3FA0'][(name||'x').length%6];
  var nm=String(name||'ش'),pt=nm.split(' - ');nm=(pt.length>1?pt[pt.length-1]:nm).replace(/^(مطعم|نابلسية|مطبخ)\s+/,'').trim();var ch=nm.charAt(0)||'ش';
  return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" rx="28" fill="'+c+'"/><text x="60" y="78" font-size="52" text-anchor="middle" fill="#FFD878" font-family="sans-serif" font-weight="700">'+ch+'</text></svg>');}
